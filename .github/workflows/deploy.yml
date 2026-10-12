@@ -27,21 +27,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #1 revision de codigos y archivos
-      -name: Checkout
-       uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v6
 
        #2 preparacion de github pages
-      -name: Setup Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v5
 
       #3 carga de archivos a github pages
-      -name: Carga artifact
+      - name: Carga artifact
         uses: actions/upload-pages-artifact@v4
         with:
-        #carpeta donde esta la web (index.html)
+          #carpeta donde esta la web (index.html)
           path: '.'
 
       #desplegar los archivos en github pages
-      -name: Desplegar en github pages
+      - name: Desplegar en github pages
         id: deployment
         uses: actions/deploy-pages@v4
